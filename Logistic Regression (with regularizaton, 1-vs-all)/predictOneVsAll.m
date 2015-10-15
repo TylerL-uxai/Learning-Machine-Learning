@@ -8,9 +8,11 @@ function p = predictOneVsAll(all_theta, X)
 %  of values from 1..K (e.g., p = [1; 3; 1; 2] predicts classes 1, 3, 1, 2
 %  for 4 examples) 
 
-% Add ones to the X data matrix
+% Add ones to the X data matrix. The X data matrix is your .mat file.
 X = [ones(size(X, 1), 1) X];
 
+% all_theta are logisitic parameters for your classes
+% there are 10 classes. One for each hand written digit we're trying to classify e.g. 1 2 3 4 5 6 7 8 9 0
 [~,p] = max(X * all_theta',[],2);
 
 end
